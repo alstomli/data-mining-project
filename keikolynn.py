@@ -30,7 +30,8 @@ def get_sets(n):
         # get individual names from shopping guides
         setting_names = main_site_data.find_all("h2", class_="page-title")
         for i in range(len(setting_names)):
-            set_name = setting_names[i].a
+            set_name = main_site_data.find_all('a')
+            set_name = [l['href'] for l in set_name]
             set_name_list.append(set_name)
 
         # get individual links from shopping guides
